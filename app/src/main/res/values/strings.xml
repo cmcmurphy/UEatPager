@@ -6,4 +6,28 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+
+    <string-array name = "volumeValues">
+        <item>fl oz</item>
+        <item>cups</item>
+        <item>tbsp</item>
+        <item>tsp</item>
+        <item>L</item>
+        <item>mL</item>
+        <item>qt</item>
+    </string-array>
+
+
+    <string-array name = "massValues">
+        <item>g</item>
+        <item>kg</item>
+        <item>oz</item>
+        <item>lb</item>
+    </string-array>
+
+    <string-array name = "tempValues">
+        <item>°F</item>
+        <item>°C</item>
+    </string-array>
 </resources>

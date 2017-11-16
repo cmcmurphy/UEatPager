@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="3dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Recipe Name"
+            android:hint="Recipe Name"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -28,50 +27,45 @@
             tools:layout_constraintRight_creator="1"
             tools:layout_constraintTop_creator="1" />
 
-        <EditText
-            android:id="@+id/servingSizeNumber"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintRight_toRightOf="@+id/servingSize"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_constraintTop_creator="1" />
+    <EditText
+        android:id="@+id/servingSizeNumber"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintRight_toRightOf="@+id/servingSize"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintTop_creator="1" />
 
-        <TextView
-            android:id="@+id/servingSize"
-            android:layout_width="175dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.05"
-            android:text="Serving Size"
-            app:layout_constraintLeft_toLeftOf="@+id/servingSizeNumber"
-            app:layout_constraintTop_toTopOf="@+id/recipeName" />
+    <TextView
+        android:id="@+id/servingSize"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.08"
+        android:text="Serving Size"
+        app:layout_constraintLeft_toLeftOf="@+id/servingSizeNumber"
+        app:layout_constraintTop_toTopOf="@+id/recipeName" />
 
-        <TextView
-            android:id="@+id/ingredientList"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.06"
-            android:text="Ingredient List"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            />
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add+"
-            tools:layout_editor_absoluteY="149dp"
-            tools:layout_editor_absoluteX="-12dp" />
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.06"
+        android:hint="Description of recipe"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingredients Add+"
+        />
 
 </LinearLayout>

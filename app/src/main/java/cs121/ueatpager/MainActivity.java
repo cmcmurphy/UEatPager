@@ -6,7 +6,9 @@
 
 package cs121.ueatpager;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -18,16 +20,21 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
     private ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,23 +66,28 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+
+
         return true;
     }
 
-    @Override
+
+  /*  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+            case R.id.user_profile:
+                //userProfile();
+                return true;
+            case R.id.sign_out:
+               // auth.signOut();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
+    }*/
 
-        return super.onOptionsItemSelected(item);
-    }
 
 
     public static class PlaceholderFragment extends Fragment {
@@ -114,13 +126,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             switch(position){
-                case 0:
+                /*case 0:
                     HomePage home_page = new HomePage();
-                    return home_page;
-                case 1:
+                    return home_page;*/
+                case 0:
                     MyRecipes my_recipes = new MyRecipes();
                     return my_recipes;
-                case 2:
+                case 1:
                     QuickConverter quick_converter = new QuickConverter();
                     return quick_converter;
         }
@@ -130,17 +142,17 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
+                /*case 0:
+                    return "HOME";*/
                 case 0:
-                    return "HOME";
-                case 1:
                     return "MY RECIPES";
-                case 2:
+                case 1:
                     return "QUICK CONVERTER";
             }
             return null;

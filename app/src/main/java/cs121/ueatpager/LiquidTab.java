@@ -14,15 +14,15 @@ import android.widget.Spinner;
 
 public class LiquidTab extends Fragment {
 
-    int newConversion, massAmount;
+    double newConversion, liquidAmount;
     String conversionTypeFrom, conversionTypeTo;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceStance) {
         View v = inflater.inflate(R.layout.liquid_tab, null);
 
         Button convert = (Button) v.findViewById(R.id.convert);
-        final EditText enterMass = (EditText) v.findViewById(R.id.enterMass1);
-        final EditText outMass = (EditText) v.findViewById(R.id.outMass2);
+        final EditText enterLiquid = (EditText) v.findViewById(R.id.enterLiquid);
+        final EditText outLiquid = (EditText) v.findViewById(R.id.outLiquid);
 
         final Spinner enteredVolumeSpinner =  v.findViewById(R.id.enteredMassSpin);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(), R.array.volumeValues, android.R.layout.simple_spinner_item);
@@ -37,62 +37,62 @@ public class LiquidTab extends Fragment {
 
         /*Data entry and processing here*/
 
-        // doConversions(enteredVolumeSpinner, desiredVolumeSpinner, enterMass, outMass);
+        // doConversions(enteredVolumeSpinner, desiredVolumeSpinner, enterMass, outLiquid);
         convert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                massAmount = Integer.parseInt(enterMass.getText().toString());
+                liquidAmount = Integer.parseInt(enterLiquid.getText().toString());
                 conversionTypeFrom = enteredVolumeSpinner.getSelectedItem().toString();
                 conversionTypeTo = desiredVolumeSpinner.getSelectedItem().toString();
 //fl oz
                 if (conversionTypeFrom.contains("fl oz")) {
                     if (conversionTypeTo.contains("fl oz") && conversionTypeFrom.contains("fl oz")) {
-                        newConversion = massAmount;
-                        outMass.setText(String.valueOf(massAmount));
+                        newConversion = liquidAmount;
+                        outLiquid.setText(String.valueOf(liquidAmount));
                     } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("cups")) {
-                        newConversion = massAmount / 8;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 8;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = massAmount * 2;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount * 2;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("tsp")) {
-                        newConversion = massAmount * 6;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount * 6;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (massAmount / 8) + (int) .25 * (massAmount / 8);
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 4 * (liquidAmount / 8) + (int) .25 * (liquidAmount / 8);
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("mL")) {
-                        newConversion = massAmount / 8;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 8;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("qt")) {
-                        newConversion = massAmount / 32;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 32;
+                        outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
 
                 //cups
                 if (conversionTypeFrom.contains("cups")) {
                     if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = massAmount * 8;
-                        outMass.setText(String.valueOf(massAmount));
+                        newConversion = liquidAmount * 8;
+                        outLiquid.setText(String.valueOf(liquidAmount));
                     } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("cups")) {
-                        newConversion = massAmount;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = 3 * (massAmount * 8);
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 3 * (liquidAmount * 8);
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("tsp")) {
-                        newConversion = massAmount * 5;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount * 5;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (massAmount / 8) + (int) .25 * (massAmount / 8);
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 4 * (liquidAmount / 8) + (int) .25 * (liquidAmount / 8);
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("mL")) {
-                        newConversion = massAmount / 8;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 8;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("qt")) {
-                        newConversion = massAmount / 32;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 32;
+                        outLiquid.setText(String.valueOf(newConversion));
                     }
 
 
@@ -100,102 +100,102 @@ public class LiquidTab extends Fragment {
 //tsp
                 if (conversionTypeFrom.contains("tsp")) {
                     if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = massAmount * 6;
-                        outMass.setText(String.valueOf(massAmount));
+                        newConversion = liquidAmount * 6;
+                        outLiquid.setText(String.valueOf(liquidAmount));
                     } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("cups")) {
-                        newConversion = 8 * (massAmount * 6);
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 8 * (liquidAmount * 6);
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = massAmount / 3;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 3;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("tsp")) {
-                        newConversion = massAmount;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (8 * (massAmount * 6)) + (int) .25 * (4 * (8 * (massAmount * 6)));
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 4 * (8 * (liquidAmount * 6)) + (int) .25 * (4 * (8 * (liquidAmount * 6)));
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("mL")) {
-                        newConversion = massAmount / 8;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 8;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("qt")) {
-                        newConversion = 4 * (8 * (massAmount * 6));
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 4 * (8 * (liquidAmount * 6));
+                        outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
 //tbsp
                 if (conversionTypeFrom.contains("tbsp")) {
                     if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = massAmount * 6;
-                        outMass.setText(String.valueOf(massAmount));
+                        newConversion = liquidAmount * 6;
+                        outLiquid.setText(String.valueOf(liquidAmount));
                     } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("cups")) {
-                        newConversion = 8 * (massAmount * 6);
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 8 * (liquidAmount * 6);
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = massAmount / 3;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 3;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("tsp")) {
-                        newConversion = massAmount;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (8 * (massAmount * 6)) + (int) .25 * (4 * (8 * (massAmount * 6)));
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 4 * (8 * (liquidAmount * 6)) + (int) .25 * (4 * (8 * (liquidAmount * 6)));
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("mL")) {
-                        newConversion = massAmount / 8;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount / 8;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("qt")) {
-                        newConversion = 4 * (8 * (massAmount * 6));
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = 4 * (8 * (liquidAmount * 6));
+                        outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
 
 //L
                 if (conversionTypeFrom.contains("L")) {
                     if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = massAmount*34; //33.184;
-                        outMass.setText(String.valueOf(massAmount));
+                        newConversion = liquidAmount*33.184; //33.184;
+                        outLiquid.setText(String.valueOf(liquidAmount));
                     } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("cups")) {
-                        newConversion = massAmount*4;//4.227
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount*4.227;//4.227
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = massAmount *67;//67.628;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount *67.628;//67.628;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("tsp")) {
-                        newConversion = massAmount*202;//202.884;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount*202.884;//202.884;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("L")) {
-                        newConversion = massAmount;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("mL")) {
-                        newConversion = massAmount *1000;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount *1000;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("qt")) {
-                        newConversion = massAmount; //1.05669;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount * 1.05669; //1.05669;
+                        outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
 //mL
                 if (conversionTypeFrom.contains("mL")) {
                     if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = massAmount ;//0.0351951
-                        outMass.setText(String.valueOf(massAmount));
+                        newConversion = liquidAmount ;//0.0351951
+                        outLiquid.setText(String.valueOf(liquidAmount));
                     } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("cups")) {
-                        newConversion = massAmount*4;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount*4;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = massAmount *67;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount *67;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("tsp")) {
-                        newConversion = massAmount*202;//202.884;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount*202;//202.884;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("L")) {
-                        newConversion = massAmount/1000;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount/1000;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("mL")) {
-                        newConversion = massAmount;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount;
+                        outLiquid.setText(String.valueOf(newConversion));
                     } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("qt")) {
-                        newConversion = massAmount ;
-                        outMass.setText(String.valueOf(newConversion));
+                        newConversion = liquidAmount ;
+                        outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
             }
@@ -208,15 +208,15 @@ public class LiquidTab extends Fragment {
     //Attempt to make dynamic result display
     // work in progress
    /* void doConversions(Spinner fromSpinner, Spinner toSpinner, EditText fromText, EditText toText){
-        massAmount = Integer.parseInt(fromText.getText().toString());
+        liquidAmount = Integer.parseInt(fromText.getText().toString());
         conversionTypeFrom = fromSpinner.getSelectedItem().toString();
         conversionTypeTo = toSpinner.getSelectedItem().toString();
 
         if(conversionTypeTo.contains("fl oz") && conversionTypeFrom.contains("fl oz")){
-            newConversion = massAmount;
-            toText.setText(String.valueOf(massAmount));
+            newConversion = liquidAmount;
+            toText.setText(String.valueOf(liquidAmount));
         }else if(conversionTypeFrom.contains("fl oz")  && conversionTypeTo.contains("cups") ){
-            newConversion = massAmount/3;
+            newConversion = liquidAmount/3;
             toText.setText(String.valueOf(newConversion));
         }
     }*/

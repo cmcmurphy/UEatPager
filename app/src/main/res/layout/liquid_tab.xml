@@ -28,7 +28,7 @@
             tools:layout_constraintLeft_creator="1" />
 
         <EditText
-            android:id="@+id/enterMass1"
+            android:id="@+id/enterLiquid"
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_marginEnd="8dp"
@@ -36,7 +36,7 @@
             android:layout_marginStart="47dp"
             android:ems="10"
             android:inputType="numberDecimal"
-            app:layout_constraintRight_toLeftOf="@+id/outMass2"
+            app:layout_constraintRight_toLeftOf="@+id/outLiquid"
             android:layout_marginLeft="47dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -44,7 +44,7 @@
             android:layout_marginTop="150dp" />
 
         <EditText
-            android:id="@+id/outMass2"
+            android:id="@+id/outLiquid"
             android:layout_width="100dp"
             android:layout_height="60dp"
             android:layout_marginRight="47dp"
@@ -70,7 +70,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/enterMass1"
+            app:layout_constraintTop_toBottomOf="@+id/enterLiquid"
             app:layout_constraintVertical_bias="0.043" />
 
         <Spinner
@@ -83,7 +83,7 @@
             android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/outMass2"
+            app:layout_constraintTop_toBottomOf="@+id/outLiquid"
             app:layout_constraintVertical_bias="0.043"
             android:layout_marginEnd="47dp" />
 
@@ -110,8 +110,8 @@
             android:layout_marginTop="196dp"
             android:rotation="180"
             android:scaleY="-1"
-            app:layout_constraintLeft_toRightOf="@+id/enterMass1"
-            app:layout_constraintRight_toLeftOf="@+id/outMass2"
+            app:layout_constraintLeft_toRightOf="@+id/enterLiquid"
+            app:layout_constraintRight_toLeftOf="@+id/outLiquid"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="?attr/homeAsUpIndicator"
             android:layout_marginStart="16dp"

@@ -1,5 +1,4 @@
-
-ppackage cs121.ueatpager;
+package cs121.ueatpager;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -49,7 +48,7 @@ public class MyRecipes extends Fragment {
             @Override
             public void onClick(View v) {
                 EditText myEditText = new EditText(getActivity());
-                myEditText.setLayoutParams(new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+                myEditText.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
                 mLayout.addView(myEditText);
             }
         };

@@ -46,22 +46,22 @@ public class TempTab extends Fragment {
                 conversionTempFrom = enteredTempSpinner.getSelectedItem().toString();
                 conversionTempTo = desiredTempSpinner.getSelectedItem().toString();
 //Fahrenheit
-                if (conversionTempFrom.contains("Fahrenheit")) {
-                    if (conversionTempTo.contains("Fahrenheit") && conversionTempFrom.contains("Fahrenheit")) {
+                if (conversionTempFrom.matches("Fahrenheit")) {
+                    if (conversionTempTo.matches("Fahrenheit") && conversionTempFrom.matches("Fahrenheit")) {
                         newConversion = tempAmount;
                         outedTemp.setText(String.valueOf(tempAmount));
-                    } else if (conversionTempFrom.contains("Fahrenheit") && conversionTempTo.contains("Celsius")) {
-                        newConversion = ((tempAmount-32)*(.556));
+                    } else if (conversionTempFrom.matches("Fahrenheit") && conversionTempTo.matches("Celsius")) {
+                        newConversion = (Math.round(((tempAmount-32)*(.556)) * 100.0)/100.0);
                         outedTemp.setText(String.valueOf(newConversion));
                     }
                 }
 //Celsius
-                if (conversionTempFrom.contains("Celsius")) {
-                    if (conversionTempTo.contains("Celsius") && conversionTempFrom.contains("Celsius")) {
+                if (conversionTempFrom.matches("Celsius")) {
+                    if (conversionTempTo.matches("Celsius") && conversionTempFrom.matches("Celsius")) {
                         newConversion = tempAmount;
                         outedTemp.setText(String.valueOf(tempAmount));
-                    } else if (conversionTempFrom.contains("Celsius") && conversionTempTo.contains("Fahrenheit")) {
-                        newConversion = ((tempAmount*(1.8))+32);
+                    } else if (conversionTempFrom.matches("Celsius") && conversionTempTo.matches("Fahrenheit")) {
+                        newConversion = (Math.round(((tempAmount*(1.8))+32) * 100.0)/100.0);
                         outedTemp.setText(String.valueOf(newConversion));
                     }
                 }

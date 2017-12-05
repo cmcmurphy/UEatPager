@@ -19,7 +19,7 @@ import android.widget.Spinner;
 
 public class MassTab extends Fragment{
 
-    int newConversion, massAmount;
+    double newConversion, massAmount;
     String conversionTypeFrom, conversionTypeTo;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceStance) {
@@ -39,13 +39,7 @@ public class MassTab extends Fragment{
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getActivity(), R.array.massValues, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         desiredMassSpinner.setAdapter(adapter2);
-/*
-        massAmount = Integer.parseInt(enterMass.getText().toString());
-        conversionTypeFrom = enteredMassSpinner.getSelectedItem().toString();
-        conversionTypeTo = desiredMassSpinner.getSelectedItem().toString();
 
-*/
-/*
         convert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,24 +48,76 @@ public class MassTab extends Fragment{
                 conversionTypeFrom = enteredMassSpinner.getSelectedItem().toString();
                 conversionTypeTo = desiredMassSpinner.getSelectedItem().toString();
 
-                if(conversionTypeTo.contains("g") && conversionTypeFrom.contains("g")) {
-                    newConversion = massAmount;
-                    outMass.setText(String.valueOf(massAmount));
-                }else if(conversionTypeTo.contains("g") && conversionTypeFrom.contains("kg")) {
-                    newConversion = 1000 * massAmount;
-                    outMass.setText(String.valueOf(massAmount));
-                }else if(conversionTypeTo.contains("g") && conversionTypeFrom.contains("oz")) {
-                    newConversion = (int )0.035274 * massAmount;
-                    outMass.setText(String.valueOf(massAmount));
-                }else if(conversionTypeTo.contains("g") && conversionTypeFrom.contains("lb")) {
-                    newConversion = (int).0022 * massAmount;
-                    outMass.setText(String.valueOf(massAmount));
+                if (conversionTypeFrom.matches("g")) {
+                    if (conversionTypeTo.matches("g")) {
+                        newConversion = massAmount;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("kg")) {
+                        newConversion = Math.round((massAmount / 1000) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("oz")) {
+                        newConversion =  Math.round((0.035274 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("lb")) {
+                        newConversion =  Math.round((0.0022 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    }
                 }
+
+                //Math.round(() * 100.0)/100.0
+
+                if (conversionTypeFrom.matches("kg")) {
+                    if (conversionTypeTo.matches("g")) {
+                        newConversion =  Math.round((massAmount * 1000) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("kg")) {
+                        newConversion = massAmount;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("oz")) {
+                        newConversion = Math.round((35.274 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("lb")) {
+                        newConversion = Math.round((2.2 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    }
+                }
+
+                if (conversionTypeFrom.matches("oz")) {
+                    if (conversionTypeTo.matches("g")) {
+                        newConversion = Math.round((28.3495 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("kg")) {
+                        newConversion = Math.round((0.0283495 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("oz")) {
+                        newConversion = massAmount;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("lb")) {
+                        newConversion = Math.round((0.0625 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    }
+                }
+
+                if (conversionTypeFrom.matches("lb")) {
+                    if (conversionTypeTo.matches("g")) {
+                        newConversion = Math.round((453.592 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("kg")) {
+                        newConversion = Math.round((0.453592 * massAmount) * 100.0)/100.0;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("oz")) {
+                        newConversion = 16 * massAmount;
+                        outMass.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("lb")) {
+                        newConversion = massAmount;
+                        outMass.setText(String.valueOf(newConversion));
+                    }
+                }
+
+
+
             }
         });
-*/
-
-
 
         return v;
     }

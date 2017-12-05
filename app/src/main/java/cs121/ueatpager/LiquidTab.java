@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 
+
 public class LiquidTab extends Fragment {
 
     double newConversion, liquidAmount;
@@ -45,159 +46,186 @@ public class LiquidTab extends Fragment {
                 conversionTypeFrom = enteredVolumeSpinner.getSelectedItem().toString();
                 conversionTypeTo = desiredVolumeSpinner.getSelectedItem().toString();
 //fl oz
-                if (conversionTypeFrom.contains("fl oz")) {
-                    if (conversionTypeTo.contains("fl oz") && conversionTypeFrom.contains("fl oz")) {
+                if (conversionTypeFrom.matches("fl oz")) {
+                    if (conversionTypeTo.matches("fl oz") && conversionTypeFrom.matches("fl oz")) {
                         newConversion = liquidAmount;
-                        outLiquid.setText(String.valueOf(liquidAmount));
-                    } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("cups")) {
-                        newConversion = liquidAmount / 8;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("tbsp")) {
+                    } else if (conversionTypeTo.matches("cups")) {
+                        newConversion = Math.round((liquidAmount / 8) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("tbsp")) {
                         newConversion = liquidAmount * 2;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("tsp")) {
+                    } else if (conversionTypeTo.matches("tsp")) {
                         newConversion = liquidAmount * 6;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (liquidAmount / 8) + (int) .25 * (liquidAmount / 8);
+                    } else if (conversionTypeTo.matches("L")) {
+                        newConversion = Math.round((4.25 * (liquidAmount / 8)) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("mL")) {
-                        newConversion = liquidAmount / 8;
+                    } else if (conversionTypeTo.matches("pt")) {
+                        newConversion = Math.round((liquidAmount * 0.0520421) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("fl oz") && conversionTypeTo.contains("qt")) {
-                        newConversion = liquidAmount / 32;
+                    } else if (conversionTypeTo.matches("qt")) {
+                        newConversion = Math.round((liquidAmount / 32) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
 
                 //cups
-                if (conversionTypeFrom.contains("cups")) {
-                    if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = liquidAmount * 8;
-                        outLiquid.setText(String.valueOf(liquidAmount));
-                    } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("cups")) {
+                if (conversionTypeFrom.matches("cups")) {
+                    if (conversionTypeFrom.matches("cups") && conversionTypeTo.matches("fl oz")) {
+                        newConversion = Math.round((liquidAmount * 8.446) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeFrom.matches("cups") && conversionTypeTo.matches("cups")) {
                         newConversion = liquidAmount;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = 3 * (liquidAmount * 8);
+                    } else if (conversionTypeFrom.matches("cups") && conversionTypeTo.matches("tbsp")) {
+                        newConversion = Math.round((liquidAmount* 16.23) * 100.0)/100.0 ;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("tsp")) {
-                        newConversion = liquidAmount * 5;
+                    } else if (conversionTypeFrom.matches("cups") && conversionTypeTo.matches("tsp")) {
+                        newConversion = Math.round((liquidAmount * 48.69) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (liquidAmount / 8) + (int) .25 * (liquidAmount / 8);
+                    } else if (conversionTypeFrom.matches("cups") && conversionTypeTo.matches("L")) {
+                        newConversion =  Math.round(((liquidAmount *.24)) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("mL")) {
-                        newConversion = liquidAmount / 8;
+                    } else if (conversionTypeFrom.matches("cups") && conversionTypeTo.matches("pt")) {
+                        newConversion = Math.round((liquidAmount * 0.5072) * 100.0) / 100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("cups") && conversionTypeTo.contains("qt")) {
-                        newConversion = liquidAmount / 32;
+                    } else if (conversionTypeFrom.matches("cups") && conversionTypeTo.matches("qt")) {
+                        newConversion =  Math.round((liquidAmount * 0.2536) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
                     }
 
 
                 }
+
 //tsp
-                if (conversionTypeFrom.contains("tsp")) {
-                    if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = liquidAmount * 6;
-                        outLiquid.setText(String.valueOf(liquidAmount));
-                    } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("cups")) {
-                        newConversion = 8 * (liquidAmount * 6);
+                if (conversionTypeFrom.matches("tsp")) {
+                    if (conversionTypeFrom.matches("tsp") && conversionTypeTo.matches("fl oz")) {
+                        newConversion =  Math.round((liquidAmount/6) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = liquidAmount / 3;
+                    } else if (conversionTypeFrom.matches("tsp") && conversionTypeTo.matches("cups")) {
+                        newConversion = Math.round((liquidAmount/48 ) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("tsp")) {
+                    } else if (conversionTypeFrom.matches("tsp") && conversionTypeTo.matches("tbsp")) {
+                        newConversion =  Math.round((liquidAmount / 3) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeFrom.matches("tsp") && conversionTypeTo.matches("tsp")) {
                         newConversion = liquidAmount;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (8 * (liquidAmount * 6)) + (int) .25 * (4 * (8 * (liquidAmount * 6)));
+                    } else if (conversionTypeFrom.matches("tsp") && conversionTypeTo.matches("L")) {
+                        newConversion =  Math.round((((liquidAmount/(48 * 4.25))) * 100.0)/100.0);
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("mL")) {
-                        newConversion = liquidAmount / 8;
+                    } else if (conversionTypeFrom.matches("tsp") && conversionTypeTo.matches("pt")) {
+                        newConversion =  Math.round((liquidAmount / 8) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tsp") && conversionTypeTo.contains("qt")) {
-                        newConversion = 4 * (8 * (liquidAmount * 6));
+                    } else if (conversionTypeFrom.matches("tsp") && conversionTypeTo.matches("qt")) {
+                        newConversion = ((liquidAmount/48*4));
                         outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
 //tbsp
-                if (conversionTypeFrom.contains("tbsp")) {
-                    if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = liquidAmount * 6;
-                        outLiquid.setText(String.valueOf(liquidAmount));
-                    } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("cups")) {
-                        newConversion = 8 * (liquidAmount * 6);
+                if (conversionTypeFrom.matches("tbsp")) {
+                    if (conversionTypeFrom.matches("tbsp") && conversionTypeTo.matches("fl oz")) {
+                        newConversion = Math.round((liquidAmount * .52042) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = liquidAmount / 3;
+                    } else if (conversionTypeFrom.matches("tbsp") && conversionTypeTo.matches("cups")) {
+                        newConversion = Math.round((liquidAmount * .061611) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("tsp")) {
-                        newConversion = liquidAmount;
+                    } else if (conversionTypeFrom.matches("tbsp") && conversionTypeTo.matches("tbsp")) {
+                        newConversion =  Math.round((liquidAmount) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("L")) {
-                        newConversion = 4 * (8 * (liquidAmount * 6)) + (int) .25 * (4 * (8 * (liquidAmount * 6)));
+                    } else if (conversionTypeFrom.matches("tbsp") && conversionTypeTo.matches("tsp")) {
+                        newConversion = liquidAmount * 3;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("mL")) {
-                        newConversion = liquidAmount / 8;
+                    } else if (conversionTypeFrom.matches("tbsp") && conversionTypeTo.matches("L")) {
+                        newConversion =  Math.round((liquidAmount * 0.0147) * 100.0)/100.0 ;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("tbsp") && conversionTypeTo.contains("qt")) {
-                        newConversion = 4 * (8 * (liquidAmount * 6));
+                    } else if (conversionTypeFrom.matches("tbsp") && conversionTypeTo.matches("pt")) {
+                        newConversion =  Math.round((liquidAmount * .02602) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeFrom.matches("tbsp") && conversionTypeTo.matches("qt")) {
+                        newConversion = Math.round((liquidAmount * 0.0130) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
 
 //L
-                if (conversionTypeFrom.contains("L")) {
-                    if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = liquidAmount*33.184; //33.184;
-                        outLiquid.setText(String.valueOf(liquidAmount));
-                    } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("cups")) {
-                        newConversion = liquidAmount*4.227;//4.227
+                if (conversionTypeFrom.matches("L")) {
+                    if (conversionTypeFrom.matches("L") && conversionTypeTo.matches("fl oz")) {
+                        newConversion =  Math.round(liquidAmount*33.184) * 100.0/100.0; //33.184;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = liquidAmount *67.628;//67.628;
+                    } else if (conversionTypeFrom.matches("L") && conversionTypeTo.matches("cups")) {
+                        newConversion =  Math.round(liquidAmount*4.227) * 100.0/100.0;//4.227
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("tsp")) {
-                        newConversion = liquidAmount*202.884;//202.884;
+                    } else if (conversionTypeFrom.matches("L") && conversionTypeTo.matches("tbsp")) {
+                        newConversion =  Math.round(liquidAmount *67.628) * 100.0/100.0;//67.628;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("L")) {
+                    } else if (conversionTypeFrom.matches("L") && conversionTypeTo.matches("tsp")) {
+                        newConversion =  Math.round(liquidAmount*202.884) * 100.0/100.0;//202.884;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeFrom.matches("L") && conversionTypeTo.matches("L")) {
                         newConversion = liquidAmount;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("mL")) {
+                    } else if (conversionTypeFrom.matches("L") && conversionTypeTo.matches("pt")) {
                         newConversion = liquidAmount *1000;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("L") && conversionTypeTo.contains("qt")) {
-                        newConversion = liquidAmount * 1.05669; //1.05669;
+                    } else if (conversionTypeFrom.matches("L") && conversionTypeTo.matches("qt")) {
+                        newConversion =  Math.round(liquidAmount * 1.05669) * 100.0/100.0; //1.05669;
                         outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
-//mL
-                if (conversionTypeFrom.contains("mL")) {
-                    if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("fl oz")) {
-                        newConversion = liquidAmount ;//0.0351951
-                        outLiquid.setText(String.valueOf(liquidAmount));
-                    } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("cups")) {
-                        newConversion = liquidAmount*4;
+//pt
+                if (conversionTypeFrom.matches("pt")) {
+                    if (conversionTypeFrom.matches("pt") && conversionTypeTo.matches("fl oz")) {
+                        newConversion = Math.round((liquidAmount * 19.2152) * 100.0)/100.0;//0.0351951
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("tbsp")) {
-                        newConversion = liquidAmount *67;
+                    } else if (conversionTypeFrom.matches("pt") && conversionTypeTo.matches("cups")) {
+                        newConversion = Math.round((liquidAmount * 2.367) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("tsp")) {
-                        newConversion = liquidAmount*202;//202.884;
+                    } else if (conversionTypeFrom.matches("pt") && conversionTypeTo.matches("tbsp")) {
+                        newConversion = Math.round((liquidAmount * 38.43) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("L")) {
-                        newConversion = liquidAmount/1000;
+                    } else if (conversionTypeFrom.matches("pt") && conversionTypeTo.matches("tsp")) {
+                        newConversion = Math.round(( liquidAmount * 115.291) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("mL")) {
+                    } else if (conversionTypeFrom.matches("pt") && conversionTypeTo.matches("L")) {
+                        newConversion = Math.round((liquidAmount * 0.568261) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeFrom.matches("pt") && conversionTypeTo.matches("pt")) {
                         newConversion = liquidAmount;
                         outLiquid.setText(String.valueOf(newConversion));
-                    } else if (conversionTypeFrom.contains("mL") && conversionTypeTo.contains("qt")) {
-                        newConversion = liquidAmount ;
+                    } else if (conversionTypeFrom.matches("pt") && conversionTypeTo.matches("qt")) {
+                        newConversion = Math.round((liquidAmount * 0.5) * 100.0)/100.0;
                         outLiquid.setText(String.valueOf(newConversion));
                     }
                 }
+
+                if (conversionTypeFrom.matches("qt")) {
+                    if (conversionTypeTo.matches("fl oz")) {
+                        newConversion = liquidAmount * 40;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("cups")) {
+                        newConversion = Math.round((liquidAmount * 4.7355) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("tbsp")) {
+                        newConversion = Math.round((liquidAmount * 76.8608) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("tsp")) {
+                        newConversion = Math.round((liquidAmount * 230.582) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("L")) {
+                        newConversion = Math.round((liquidAmount * 1.13) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("pt")) {
+                        newConversion = Math.round((liquidAmount * 2) * 100.0)/100.0;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    } else if (conversionTypeTo.matches("qt")) {
+                        newConversion = liquidAmount;
+                        outLiquid.setText(String.valueOf(newConversion));
+                    }
+                }
+
             }
         });
 
@@ -212,10 +240,10 @@ public class LiquidTab extends Fragment {
         conversionTypeFrom = fromSpinner.getSelectedItem().toString();
         conversionTypeTo = toSpinner.getSelectedItem().toString();
 
-        if(conversionTypeTo.contains("fl oz") && conversionTypeFrom.contains("fl oz")){
+        if(conversionTypeTo.matches("fl oz") && conversionTypeFrom.matches("fl oz")){
             newConversion = liquidAmount;
             toText.setText(String.valueOf(liquidAmount));
-        }else if(conversionTypeFrom.contains("fl oz")  && conversionTypeTo.contains("cups") ){
+        }else if(conversionTypeFrom.matches("fl oz")  && conversionTypeTo.matches("cups") ){
             newConversion = liquidAmount/3;
             toText.setText(String.valueOf(newConversion));
         }

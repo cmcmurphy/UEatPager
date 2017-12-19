@@ -2,211 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\362deb9ff67a6c9ac2796cabe640f5d1399934d8\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="1941832901fc4e7a93300b53762e9f65d7650b99">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_ce47cb9c7fe4f2459492a9a741bdd4f93206ece1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\90155084a1adc97997d9cc273b96363badeef55a\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_95817a6a362eb1a359d1715c16bbf5ad57bb6843.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\727736c97c58b991286b3557785a73c5431c61ef\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="42df48c7305b08b14fa0e84561091b0c24d70d26">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_b280cfb86fe01d83b067721775e40be46cf0fb5d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\4de022d069ba5afd7142fe0fd3679a0e036672c5\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="568d5bda0b4d51f90d978ace369bb9ad024d2057">
-        <dex dex="C:\Users\Candace\Documents\CMPS121\UEatPager\app\build\intermediates\pre-dexed\debug\classes_17605fbb8529bde1a25120c9d732a867db390299.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\9bce02c9fba3574a5c266a83691d69ddfc5d01de\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="aec1bc54964a85d851c2c1b1cb7f90f7dbd755ab">
-        <dex dex="C:\Users\Candace\Documents\CMPS121\UEatPager\app\build\intermediates\pre-dexed\debug\classes_c79383b233d467ec002444896b302e0c8d792f8e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\92524e05fb84562e22cbd21420822704d03b555e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9935891f23923f39d002087085d9696568a9f657">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_4a25e4036aa88c66ef3f85005c175cb1787880bf.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\9ee1cbdf46afc4adc0fde8d07e802efe42970c1b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="94d9cedd04b124aed044ac71c451a292856d854c">
-        <dex dex="C:\Users\Candace\Documents\CMPS121\UEatPager\app\build\intermediates\pre-dexed\debug\classes_78a7352e3848dcb58877a3d2d9b7f07d2242164f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\32eadbefced704147e28cfc05e818957cd1ef68b\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6f65c144283b31b4b9a70e6e7aa4c4a1c897d4b8">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_56e70757a29490599dcea130681f972b35a55032.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\20e0c7587b7d881a276af4214ea7be3f83ec85ae\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_4fc9956472710ba74268b7a0b5651e51977b3f00.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\59e34bcfa7a36f54abdcdb0a3b3c89f322b773bc\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="79e298d7fed2fcada58da7032d07d34ee198a545">
-        <dex dex="C:\Users\Candace\Documents\CMPS121\UEatPager\app\build\intermediates\pre-dexed\debug\classes_5924915cf4b8cf247727649635837e81ab604ca8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\5bd512f095c65dca0c8520ad35e6022971ee692c\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_fd3f35a07d2a5f6a9e7720934a8cad92c13a2a18.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\d9125fd6fd7c43a2eaaa588e5c5e970d402e6e8f\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_8907f5f141f9bad770a4aa97d2848c68cbaea557.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\8c577378ae42b37d3689ec44f306f38e7f9a8554\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="9919563cffd8e3732e944d3c437d4b9575a08448">
-        <dex dex="C:\Users\Candace\Documents\CMPS121\UEatPager\app\build\intermediates\pre-dexed\debug\classes_7fda9450c9013a645ed763ad5f0ce01ec0a92661.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\cec95859fbcd6fb9b99bcf7583248ec73e7cbf76\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_4ff5b2a367503414307ffed4a8690320b90b6613.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\6613853c71d82ecc858b1fbfe995d130840116ac\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4022261eeea0d92eb2997a68d2c1f084a16abad9">
-        <dex dex="C:\Users\Candace\Documents\CMPS121\UEatPager\app\build\intermediates\pre-dexed\debug\classes_0c50eecf9feb513ca23344c9192e9f1840fda8a7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\23e630a9768890573b321b4dadc6a6cafc7113ae\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_b0ef352ac653801a8bbb8fc47a2cd8af7f217a04.jar" />
-    </item>
-    <item
         is-multidex="true"
-        jar="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\kevin\AndroidStudioProjects\UEat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="d21b04a4cfdbf6376c71a44ee17e7d50ffdb6808">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_3535d4cb153e4228d058a63edd632b8238c2180b\classes.dex" />
+        sha1="7c9b1bcec8c260cf2a50eb53a58c5713fbe9b530">
+        <dex dex="C:\Users\kevin\AndroidStudioProjects\UEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_395b2863aca435594dc32defced57d5a58d3f717\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\kevin\AndroidStudioProjects\UEat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a53fceea1938ea70a2e6d2f9b46bb94f936000bb\classes.dex" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\3cc29e07dfc79b04ec8771bf083c86ae46fd5599\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="fa472b7cbd3897bf6bed6068ac0b00e494987688">
-        <dex dex="C:\Users\Candace\Documents\CMPS121\UEatPager\app\build\intermediates\pre-dexed\debug\classes_1adf00441381a274da01e1b8fb5a163aac9fdd40.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\1dfe6bb26fa4691c514ebbb573fe99fc3045f93e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_f954d849b774733691e783f6e85cd303cd97f740.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\f6f29c0bc099b9b61f1424429a33fdfa56820756\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="952944218ecedea1554a513dec0c14d570642843">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_b256360280459dccb2999b68b6f877854da5bbb5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\e13305e633ccc01b2e406fa59456e978ca66ce24\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="cc178928721f3222b3b06bdfbd9497378ccb9792">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_8c806c4abbe1c9286eb07151d72e53c4d125a2f5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Candace\.android\build-cache\8447d853176ec7d1e50bd394a3e6adbc44e98ecf\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
-        <dex dex="C:\Users\Candace\AndroidStudioProjects\UEatPager\app\build\intermediates\pre-dexed\debug\classes_6aec3cd0e5fdf43c9b90fb1f22e887036cbd9a3c.jar" />
+        <dex dex="C:\Users\kevin\AndroidStudioProjects\UEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_a3dd4d9811fac6f9fa32d5d12c2ecf25a6d0c97b\classes.dex" />
     </item>
 
 </items>
